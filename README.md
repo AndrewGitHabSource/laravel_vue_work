@@ -1,10 +1,10 @@
 # laravel_vue_work
 laravel_vue_work
 
-<h2>Description</h2>h2>
+<h2>Description</h2>
 <p>A project written in Laravel and Vue where you can post a vacancy or send a resume to the desired vacancy</p>
 
-<h2>Installation</h2>h2>
+<h2>Installation</h2>
 <div>
     <p>clone the project</p>
     <p>create database</p>
