@@ -4,7 +4,7 @@
 
         <h2>Add Position</h2>
 
-
+        <EditPositionForm></EditPositionForm>
     </div>
 </template>
 
@@ -12,8 +12,12 @@
 import {inject, reactive, onMounted, ref, watch, computed} from "vue";
 import {getPositionsAdmin, searchPositions} from "../../../endpoints";
 import { useRoute } from 'vue-router';
+import EditPositionForm from "./EditPositionForm.vue";
 
 export default {
+    components: {
+      EditPositionForm,
+    },
     setup() {
         let router = inject("router");
 

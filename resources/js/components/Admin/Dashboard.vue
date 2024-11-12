@@ -5,7 +5,7 @@
         <nav>
             <ul>
                 <li>
-                    <router-link to="/positions">Go to Positions</router-link>
+                    <router-link to="/admin/positions">Go to Positions</router-link>
                 </li>
             </ul>
         </nav>

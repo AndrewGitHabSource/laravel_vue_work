@@ -4,6 +4,7 @@ import Dashboard from './components/Admin/Dashboard.vue';
 import AddResume from './components/Admin/AddResume.vue';
 import EditResume from './components/Admin/EditResume.vue';
 import Positions from './components/Admin/Position/Positions';
+import AddPosition from './components/Admin/Position/AddPosition';
 
 export const routes = [
     {
@@ -18,7 +19,7 @@ export const routes = [
     },
     {
         name: 'dashboard',
-        path: '/dashboard',
+        path: '/admin/dashboard',
         component: Dashboard,
         meta: {
             auth: true,
@@ -26,15 +27,23 @@ export const routes = [
     },
     {
         name: 'positions',
-        path: '/positions',
+        path: '/admin/positions',
         component: Positions,
         meta: {
             auth: true,
         },
     },
     {
+        name: 'addPosition',
+        path: '/admin/add-position',
+        component: AddPosition,
+        meta: {
+            auth: true,
+        },
+    },
+    {
         name: 'addResume',
-        path: '/add-resume',
+        path: '/admin/add-resume',
         component: AddResume,
         meta: {
             auth: true,
@@ -42,7 +51,7 @@ export const routes = [
     },
     {
         name: 'editResume',
-        path: '/edit-resume/:id',
+        path: '/admin/edit-resume/:id',
         component: EditResume,
         meta: {
             auth: true,

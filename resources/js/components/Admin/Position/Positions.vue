@@ -5,7 +5,7 @@
         <nav>
             <ul>
                 <li>
-                    <router-link to="/add-position">Add Positions</router-link>
+                    <router-link to="/admin/add-position">Add Positions</router-link>
                 </li>
             </ul>
         </nav>

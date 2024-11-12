@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Models\Position;
+use App\Models\Resume;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\JsonResponse;
@@ -25,6 +26,16 @@ class PositionController extends Controller
         return response()->json([
             'total' => $total,
             'positions' => Position::take($this->limit)->skip($this->skip($request))->get(),
+        ]);
+    }
+
+    public function save(Request $request): void
+    {
+        $position = Position::updateOrCreate([
+            'id' => $request->id,
+        ], [
+            'title' => $request->title,
+            'description' => $request->description,
         ]);
     }
 
