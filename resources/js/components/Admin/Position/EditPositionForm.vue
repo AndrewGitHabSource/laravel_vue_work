@@ -19,6 +19,10 @@
   import { savePosition } from "../../../endpoints";
   import { useRoute } from 'vue-router';
   export default {
+    props: {
+      position: Object,
+      edit: Boolean,
+    },
     setup(props, {emit}) {
       let router = inject("router");
       let form = reactive({
@@ -28,10 +32,14 @@
       });
 
       const initPosition = (data) => {
-        form.id = data.id ?? null;
-        form.title = data.title ?? '';
-        form.description = data.description ?? '';
+        form.id = data?.id ?? null;
+        form.title = data?.title ?? '';
+        form.description = data?.description ?? '';
       }
+
+      onMounted(() => {
+        initPosition(props.position);
+      });
 
       const save = async () => {
         try {
@@ -43,7 +51,7 @@
       }
 
       const reset = () => {
-
+        initPosition(false);
       }
 
       return {

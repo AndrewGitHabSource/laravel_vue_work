@@ -4,7 +4,7 @@
 
         <h2>Add Position</h2>
 
-        <EditPositionForm></EditPositionForm>
+        <EditPositionForm @save="save"></EditPositionForm>
     </div>
 </template>
 
@@ -21,8 +21,12 @@ export default {
     setup() {
         let router = inject("router");
 
-        return {
+        const save = () => {
 
+        }
+
+        return {
+          save,
         }
     }
 }

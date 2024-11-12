@@ -67,5 +67,5 @@ export const searchPositions = async (search, page) => {
 }
 
 export const savePosition = async (position) => {
-    return await $http.post(route('save.position'), position);
+    return await $http.post(route('admin.positions.save'), position);
 }

@@ -14,7 +14,7 @@ Route::post('/save-resume', [Controllers\HomeController::class, 'saveResume'])->
 Route::middleware('auth:sanctum')->prefix('admin')->group(function () {
     Route::get('/get-resume', [Controllers\Admin\ResumeController::class, 'getResume'])->name('admin.get.resume');
     Route::get('/positions', [Controllers\Admin\PositionController::class, 'index'])->name('admin.positions');
-    Route::get('/save-position', [Controllers\Admin\PositionController::class, 'save'])->name('admin.save');
+    Route::post('/save-position', [Controllers\Admin\PositionController::class, 'save'])->name('admin.positions.save');
     Route::get('/resumes', [Controllers\Admin\ResumeController::class, 'index'])->name('admin.resumes');
     Route::post('/update-resume', [Controllers\HomeController::class, 'updateResume'])->name("update.resume");
     Route::get('/search-resumes', [Controllers\Admin\ResumeController::class, 'searchResume'])->name("admin.search.resumes");

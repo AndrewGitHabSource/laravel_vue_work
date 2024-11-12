@@ -10,6 +10,11 @@ class Position extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'title',
+        'description',
+    ];
+
     protected $hidden = ['pivot'];
 
     public function resume(): BelongsToMany {
