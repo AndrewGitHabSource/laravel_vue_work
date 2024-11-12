@@ -6,12 +6,12 @@ export const lastNameRules = [
     v => !!v || 'Last Name is required',
 ];
 export const emailRules = [
-    v => !!v || 'Last Name is required',
+    v => !!v || 'Email is required',
     v => v.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i),
 ];
 export const phoneRules = [
-    v => !!v || 'Last Name is required',
+    v => !!v || 'Phone is required',
 ];
 export const aboutRules = [
-    v => !!v || 'Last Name is required',
+    v => !!v || 'About is required',
 ];
