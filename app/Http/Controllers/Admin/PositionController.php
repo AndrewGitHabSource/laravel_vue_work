@@ -29,6 +29,13 @@ class PositionController extends Controller
         ]);
     }
 
+    public function getPosition(Request $request, $id): JsonResponse
+    {
+        return response()->json([
+            'position' => Position::where('id', $id)->first(),
+        ]);
+    }
+
     public function save(Request $request): void
     {
         $position = Position::updateOrCreate([

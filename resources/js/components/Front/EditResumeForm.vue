@@ -117,7 +117,7 @@
 
             watch(formData, (value) => {
                 if(value.id) {
-                    initResume(value)
+                    initResume(value);
                 }
             });
 

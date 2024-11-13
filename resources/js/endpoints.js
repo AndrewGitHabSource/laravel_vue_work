@@ -4,6 +4,10 @@ export const getPositions = async () => {
     return await $http.get(route('get.positions'));
 }
 
+export const getPosition = async (id) => {
+    return await $http.get(route('admin.get.positions', { 'id': id }));
+}
+
 export const findResume = async (id) => {
     return await $http.get(route('admin.get.resume'), {
         'params': {id},

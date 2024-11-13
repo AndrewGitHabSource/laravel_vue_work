@@ -15,12 +15,15 @@
 </template>
 
 <script>
-  import { inject, reactive, onMounted, ref, watch, computed } from "vue";
+  import { inject, reactive, onMounted, ref, watch, computed, toRefs  } from "vue";
   import { savePosition } from "../../../endpoints";
   import { useRoute } from 'vue-router';
   export default {
     props: {
-      position: Object,
+      position: {
+        type: Object,
+        required: true,
+      },
       edit: Boolean,
     },
     setup(props, {emit}) {
@@ -30,6 +33,7 @@
         title: '',
         description: '',
       });
+      const positionObject = toRefs(props.position);
 
       const initPosition = (data) => {
         form.id = data?.id ?? null;
@@ -38,7 +42,7 @@
       }
 
       onMounted(() => {
-        initPosition(props.position);
+        initPosition(positionObject);
       });
 
       const save = async () => {

@@ -3,8 +3,9 @@ import Register from './components/Front/Login.vue';
 import Dashboard from './components/Admin/Dashboard.vue';
 import AddResume from './components/Admin/AddResume.vue';
 import EditResume from './components/Admin/EditResume.vue';
-import Positions from './components/Admin/Position/Positions';
-import AddPosition from './components/Admin/Position/AddPosition';
+import Positions from './components/Admin/Position/Positions.vue';
+import AddPosition from './components/Admin/Position/AddPosition.vue';
+import EditPosition from './components/Admin/Position/EditPosition.vue';
 
 export const routes = [
     {
@@ -37,6 +38,14 @@ export const routes = [
         name: 'addPosition',
         path: '/admin/add-position',
         component: AddPosition,
+        meta: {
+            auth: true,
+        },
+    },
+    {
+        name: 'editPosition',
+        path: '/admin/edit-position/:id',
+        component: EditPosition,
         meta: {
             auth: true,
         },

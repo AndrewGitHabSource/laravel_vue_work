@@ -83,6 +83,10 @@ export default {
             }
         }
 
+        const edit = (id) => {
+          router.push({name: 'editPosition', params: {id}});
+        }
+
         watch(currentPage, async () => {
             await receivePositions();
         });
@@ -97,6 +101,7 @@ export default {
             search,
             positions,
             router,
+            edit,
         }
     }
 }

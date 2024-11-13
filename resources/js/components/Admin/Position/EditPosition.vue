@@ -4,16 +4,15 @@
 
     <h2>Edit Position</h2>
 
-    <EditPositionForm :position="position" />
+    <EditPositionForm :position="position" :edit="true" @save="save" />
   </div>
 </template>
 
 <script>
 import {inject, reactive, onMounted, ref, watch, computed} from "vue";
-import {getPositionsAdmin, searchPositions} from "../../../endpoints";
+import {getPositionsAdmin, getPosition} from "../../../endpoints";
 import { useRoute } from 'vue-router';
 import EditPositionForm from "./EditPositionForm.vue";
-import positions from "@/components/Admin/Position/Positions.vue";
 
 export default {
   components: {
@@ -21,10 +20,31 @@ export default {
   },
   setup() {
     let router = inject("router");
-    let position = null;
+    const route = useRoute();
+    let position = reactive({
+      id: null,
+      title: '',
+      description: '',
+    });
+
+    onMounted(async () => {
+      try {
+        let {data} = await getPosition(route.params.id);
+        Object.assign(position, data.position);
+
+        // console.log(position);
+      } catch (error) {
+        console.log(error);
+      }
+    });
+
+    const save = () => {
+      router.push({name: 'dashboard'});
+    }
 
     return {
       position,
+      save,
     }
   }
 }

@@ -22,7 +22,7 @@ export default {
         let router = inject("router");
 
         const save = () => {
-
+          router.push({name: 'dashboard'});
         }
 
         return {
