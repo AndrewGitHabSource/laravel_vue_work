@@ -30,16 +30,15 @@ export default {
     onMounted(async () => {
       try {
         let {data} = await getPosition(route.params.id);
-        Object.assign(position, data.position);
 
-        // console.log(position);
+        Object.assign(position, data.position);
       } catch (error) {
         console.log(error);
       }
     });
 
     const save = () => {
-      router.push({name: 'dashboard'});
+      router.push({name: 'positions'});
     }
 
     return {
